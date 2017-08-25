@@ -7,6 +7,7 @@
 #include "FirstPersonCharacter.generated.h"
 
 class UInputComponent;
+class AGun;
 
 UCLASS(config=Game)
 class AFirstPersonCharacter : public ACharacter
@@ -39,6 +40,9 @@ public:
 	/** Gun muzzle's offset from the characters location */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Gameplay)
 	FVector GunOffset;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Setup")
+	TSubclassOf<AGun> GunBlueprint;
 
 protected:
 	
@@ -95,5 +99,8 @@ public:
 	/** Returns FirstPersonCameraComponent subobject **/
 	FORCEINLINE class UCameraComponent* GetFirstPersonCameraComponent() const { return FirstPersonCameraComponent; }
 
+private:
+
+	AGun* Gun;
 };
 
