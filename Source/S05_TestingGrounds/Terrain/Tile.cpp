@@ -3,7 +3,6 @@
 #include "Tile.h"
 #include "DrawDebugHelpers.h"
 #include "WorldCollision.h"
-#include "Engine/World.h"
 
 // Sets default values
 ATile::ATile()
@@ -44,7 +43,7 @@ void ATile::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 }
 
-bool CastSphere(FVector Location, float Radius)
+bool ATile::CastSphere(FVector Location, float Radius)
 {
 	FHitResult HitResult;
 	bool HasHit = GetWorld()->SweepSingleByChannel(
