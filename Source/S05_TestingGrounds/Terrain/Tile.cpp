@@ -67,6 +67,11 @@ void ATile::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 }
 
+void ATile::SetPool(UActorPool* InPool)
+{
+	Pool = InPool;
+}
+
 bool ATile::CanSpawnAtLocation(FVector Location, float Radius)
 {
 	FHitResult HitResult;
