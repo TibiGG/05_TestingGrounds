@@ -9,5 +9,8 @@ public class S05_TestingGroundsTarget : TargetRules
 	{
 		Type = TargetType.Game;
 		ExtraModuleNames.Add("S05_TestingGrounds");
+
+        bUseUnityBuild = false;
+        bUsePCHFiles = false;
 	}
 }
