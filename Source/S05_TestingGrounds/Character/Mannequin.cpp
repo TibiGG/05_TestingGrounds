@@ -68,7 +68,8 @@ void AMannequin::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 }
 
-void AMannequin::Death() {
+void AMannequin::Death() 
+{
 	Gun->AttachToComponent((USceneComponent*)GetMesh(), FAttachmentTransformRules(EAttachmentRule::SnapToTarget, true), TEXT("GripPoint_0"));
 }
 

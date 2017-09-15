@@ -18,6 +18,7 @@ AGun::AGun()
 	FP_Gun->CastShadow = false;
 	// FP_Gun->SetupAttachment(Mesh1P, TEXT("GripPoint"));
 	// FP_Gun->SetupAttachment(RootComponent);
+	RootComponent = FP_Gun;
 
 	FP_MuzzleLocation = CreateDefaultSubobject<USceneComponent>(TEXT("MuzzleLocation"));
 	FP_MuzzleLocation->SetupAttachment(FP_Gun);
