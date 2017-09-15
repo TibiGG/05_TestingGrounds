@@ -70,7 +70,9 @@ void AMannequin::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent
 
 void AMannequin::Death() 
 {
-	Gun->AttachToComponent((USceneComponent*)GetMesh(), FAttachmentTransformRules(EAttachmentRule::SnapToTarget, true), TEXT("GripPoint_0"));
+	//Gun->AttachToComponent((USceneComponent*)GetMesh(), FAttachmentTransformRules(EAttachmentRule::SnapToTarget, true), TEXT("GripPoint_0"));
+	Gun->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
+	// Gun->GetComponentByClass(TSubclassOf<SkeletalMeshComponent>)
 }
 
 void AMannequin::PullTrigger()
